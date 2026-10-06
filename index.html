@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abdullah Ahmadi · GIS Portfolio</title>
+<meta name="description" content="GIS and Earth Observation work by Abdullah Ahmadi: rooftop suitability for solar PV and green roofs, urban heat, land cover classification and ecosystem services.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbfaf7; --surface:#ffffff; --text:#1d2327; --muted:#5b6670;
+  --line:#e3e0d8; --accent:#1f6b52; --accent-soft:#e8f2ee; --warm:#b5622e;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#121619; --surface:#1a1f23; --text:#e6e8e9; --muted:#9aa5ad;
+    --line:#2b3237; --accent:#5fbf98; --accent-soft:#1d2b26; --warm:#e0915e;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);
+  font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--accent)}
+img{max-width:100%;display:block;border-radius:6px;border:1px solid var(--line)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:"Source Serif 4",Georgia,serif;font-weight:600;line-height:1.25}
+h1{font-size:2.6rem;margin:0 0 .3rem}
+h2{font-size:1.75rem;margin:0 0 .4rem}
+h3{font-size:1.1rem;margin:1.4rem 0 .3rem}
+p{margin:.5rem 0 1rem}
+
+/* nav */
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:20px;align-items:center;height:54px;overflow-x:auto;white-space:nowrap}
+nav a{color:var(--muted);text-decoration:none;font-size:.92rem}
+nav a:hover{color:var(--text)}
+nav .name{color:var(--text);font-weight:600;margin-right:auto}
+
+/* hero */
+header{padding:64px 0 40px}
+.role{color:var(--accent);font-weight:600;font-size:1.1rem;margin:0 0 1rem}
+.lead{font-size:1.1rem;max-width:680px}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:1.4rem}
+.btn{display:inline-block;padding:8px 16px;border:1px solid var(--line);border-radius:6px;
+  background:var(--surface);color:var(--text);text-decoration:none;font-size:.92rem}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+@media (prefers-color-scheme: dark){.btn.primary{color:#0f1a16}}
+
+/* facts */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:8px 0 0}
+.fact{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:6px;padding:14px 16px}
+.fact b{display:block;font-family:"Source Serif 4",Georgia,serif;font-size:1.5rem;color:var(--accent)}
+.fact span{font-size:.85rem;color:var(--muted)}
+
+/* sections */
+section{padding:56px 0;border-top:1px solid var(--line)}
+.kicker{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--warm);font-weight:600;margin:0 0 .5rem}
+.meta{color:var(--muted);font-size:.92rem;margin-top:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+figure{margin:0}
+figcaption{font-size:.84rem;color:var(--muted);margin-top:6px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:.6rem 0 1rem}
+.tags span{font-size:.78rem;background:var(--accent-soft);color:var(--accent);padding:3px 9px;border-radius:20px}
+.note{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px 16px;font-size:.92rem}
+ul{padding-left:1.2rem;margin:.4rem 0 1rem}
+li{margin:.2rem 0}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px 18px}
+.skill h3{margin-top:0}
+
+/* publications */
+.pubs li{margin:.7rem 0}
+footer{padding:40px 0 60px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+
+@media (max-width:820px){
+  h1{font-size:2rem}
+  .grid2,.skills{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr 1fr}
+  header{padding:40px 0 28px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="name">Abdullah Ahmadi</span>
+    <a href="#rooftops">Rooftops</a>
+    <a href="#heat">Urban heat</a>
+    <a href="#pv-zip">PV inventory</a>
+    <a href="#venice">Venice Lagoon</a>
+    <a href="#carbon">Carbon</a>
+    <a href="#skills">Skills</a>
+    <a href="#publications">Publications</a>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <h1>Abdullah Ahmadi</h1>
+    <p class="role">GIS &amp; Earth Observation Analyst · Padova, Italy</p>
+    <p class="lead">I use GIS and satellite data to answer practical questions about places: which roofs can host solar panels or greenery, which neighbourhoods are hottest, how land cover changes over time. This page collects some of the work I have done since 2023, with the maps, the methods and what each project taught me.</p>
+    <p class="lead">My background is in geology. Before moving to Italy I worked for three and a half years as an environmental geologist at Afghanistan's Ministry of Mines and Petroleum, on environmental impact assessment, monitoring and permitting. In Padova I completed an MSc in Environmental Sustainability (110/110 cum laude) and continued with research on spatial analysis, climate adaptation and renewable energy at the Department of Civil, Environmental and Architectural Engineering (DICEA).</p>
+    <div class="links">
+      <a class="btn primary" href="https://doi.org/10.1016/j.uclim.2026.102840">Read the Urban Climate paper</a>
+      <a class="btn" href="https://www.linkedin.com/in/abdullahahmadi/">LinkedIn</a>
+      <a class="btn" href="https://github.com/abdullaahmadi">GitHub</a>
+      <a class="btn" href="mailto:ahmadi.abdh@gmail.com">ahmadi.abdh@gmail.com</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap" style="padding-bottom:40px">
+  <div class="facts">
+    <div class="fact"><b>29,493</b><span>buildings assessed one by one in Padova</span></div>
+    <div class="fact"><b>0.837 TWh/yr</b><span>rooftop PV potential estimated for the city</span></div>
+    <div class="fact"><b>0.5 m</b><span>LiDAR DSM/DTM used for roof geometry</span></div>
+    <div class="fact"><b>3.5 years</b><span>field, EIA and permitting work before GIS research</span></div>
+  </div>
+</div>
+
+<!-- 1. RT4ES -->
+<section id="rooftops">
+  <div class="wrap">
+    <p class="kicker">Published research · Urban Climate 66 (2026) 102840</p>
+    <h2>Which roofs in Padova should get solar panels, green roofs, or both?</h2>
+    <p class="meta">Ahmadi, Codato, Peroni, De Marchi · University of Padova (DICEA) · My role: first author. Data processing, model design, analysis, maps and most of the writing.</p>
+
+    <div class="grid2">
+      <div>
+        <p>Cities usually plan rooftops for one technology at a time. In this study I built a model, called RT4ES (Rooftops for Equity and Sustainability), that looks at every building in Padova and checks four options together: extensive green roofs, intensive green roofs, rooftop gardens and photovoltaics. The model shows where these options compete for the same roof, where they can be combined, and which neighbourhoods should come first.</p>
+        <h3>How it works</h3>
+        <ul>
+          <li>Normalised surface model (DSM minus DTM) from 0.5 m LiDAR, cleaned with a 5×5 median filter to remove chimneys and other noise.</li>
+          <li>Slope, aspect and usable area for each roof, checked visually on the 20 cm orthophoto.</li>
+          <li>Separate rules for each intervention (slope, minimum area, building use). North-facing facets are excluded for PV on sloped roofs.</li>
+          <li>Suitable roofs are then prioritised for 40 urban units with a weighted linear combination: physical suitability (0.25), environmental vulnerability (0.35) and socio-economic vulnerability (0.40).</li>
+        </ul>
+        <div class="tags"><span>QGIS</span><span>Google Earth Engine</span><span>LiDAR</span><span>Landsat LST</span><span>GIS-MCDA</span><span>Open data</span></div>
+      </div>
+      <figure>
+        <img src="images/padova-roof-slope.jpg" alt="Map of roof slope classes for every building in Padova" loading="lazy">
+        <figcaption>Dominant roof slope class for every building in Padova, with two zoomed areas (Fig. 3 of the paper).</figcaption>
+      </figure>
+    </div>
+
+    <figure style="margin-top:28px">
+      <img src="images/rt4es-workflow.jpg" alt="RT4ES workflow from input data to prioritised rooftops" loading="lazy">
+      <figcaption>The RT4ES workflow: inputs, pre-processing, intermediate outputs, geoprocessing and final GIS-MCDA (Fig. 2).</figcaption>
+    </figure>
+
+    <h3 style="margin-top:32px">What we found</h3>
+    <div class="grid2">
+      <div>
+        <p>The model identifies <strong>11.67 km²</strong> of net suitable roof area on <strong>29,493 buildings</strong>. PV is possible on the largest share of roofs (11.93 km² on 30,372 roofs), followed by extensive green roofs (7.25 km²). Rooftop gardens (3.69 km²) and intensive green roofs (2.71 km²) depend more on building type.</p>
+        <p>Greening the suitable roofs would add about <strong>10.94 km²</strong> of vegetated surface, around 21% of the city's current green-space stock. On the 9.10 km² of PV-suitable roofs, the estimated production is about <strong>0.837 TWh per year</strong>, roughly three times the city's household electricity use.</p>
+        <p>Once social and environmental vulnerability are added, the priorities move towards compact, underserved neighbourhoods in the east, north-east and centre, where feasibility and need overlap. The whole model runs on open data and free software, so another city can reuse it.</p>
+      </div>
+      <figure>
+        <img src="images/rooftop-suitability.jpg" alt="Four maps of rooftop suitability per urban unit" loading="lazy">
+        <figcaption>Share of roof area suitable per urban unit: (a) intensive green roofs, (b) extensive green roofs, (c) PV, (d) rooftop gardens (Fig. 4).</figcaption>
+      </figure>
+    </div>
+    <figure style="margin-top:20px">
+      <img src="images/priority-scenarios.jpg" alt="Priority maps under synergy and competition scenarios" loading="lazy">
+      <figcaption>Priority under (a) the synergy scenario, PV with intensive green roofs and gardens, and (b) the competition scenario, PV or extensive green roofs (Fig. 9).</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 2. Heat -->
+<section id="heat">
+  <div class="wrap">
+    <p class="kicker">Ongoing research · Urban heat and Nature-based Solutions</p>
+    <h2>Where is Padova hottest, and who lives there?</h2>
+    <div class="grid2">
+      <figure>
+        <img src="images/padova-lst-hotspots.jpg" alt="Median summer land surface temperature and thermal hotspots in Padova" loading="lazy">
+        <figcaption>Median summer land surface temperature and thermal hotspots (90th percentile), June–August 2025, Landsat 8–9 Collection 2 Level-2.</figcaption>
+      </figure>
+      <div>
+        <p>Green roofs, trees and pocket parks can cool a city, but if nobody checks where they go, the benefits often end up in areas that are already better off. In this work I combine land surface temperature, imperviousness and vegetation deficit with a social vulnerability index, to find places where Nature-based Solutions are feasible, respond to heat risk and are fair.</p>
+        <p>The heat mapping is also part of a book chapter on urban climate justice in Padova (CRC Press, in press). Part of the method work was developed during a research stay at ITC, University of Twente.</p>
+        <div class="tags"><span>Google Earth Engine</span><span>Landsat 8–9</span><span>LST</span><span>Vulnerability index</span><span>GIS-MCDA</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. PV ZIP -->
+<section id="pv-zip">
+  <div class="wrap">
+    <p class="kicker">Method design · Presented at FOSS4G-IT &amp; OSMit 2026, Trento</p>
+    <h2>Mapping the solar panels already installed in Padova's Industrial Zone</h2>
+    <p>Before estimating how much more solar an industrial district can host, you need to know what is already on the roofs. With Daniele Codato I designed an open-source workflow to inventory existing rooftop PV in the Zona Industriale di Padova, separate occupied from free roof area, and test how far cheaper satellite images can replace aerial photos.</p>
+    <div class="grid2">
+      <div>
+        <h3>Three steps</h3>
+        <ul>
+          <li><strong>Reference inventory:</strong> PV arrays delineated building by building on the 20 cm orthophoto, with a second reviewer. This becomes the training and validation data.</li>
+          <li><strong>Object-based Random Forest:</strong> segmentation of orthophoto plus LiDAR height, with spectral, index, texture (GLCM) and geometry features to separate panels from dark roofing.</li>
+          <li><strong>Cross-sensor test:</strong> the same classifier on 3 m PlanetScope SuperDove imagery, comparing 8 and 4 bands.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Why it is interesting</h3>
+        <p>Skylights, dark membranes and HVAC units look like panels from above, so the workflow treats them as known false positives from the start. PlanetScope has no SWIR band, which makes the test a useful measure of how much PV signal is left in the visible and near-infrared range.</p>
+        <p class="note">Status: method designed and presented; journal manuscript in preparation. Validation against the GSE Atlaimpianti register.</p>
+        <div class="tags"><span>QGIS</span><span>Python</span><span>PlanetScope</span><span>OBIA</span><span>Random Forest</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Venice -->
+<section id="venice">
+  <div class="wrap">
+    <p class="kicker">Remote sensing · MSc course project (2023)</p>
+    <h2>Land cover of the Venice Lagoon from Sentinel-2</h2>
+    <div class="grid2">
+      <div>
+        <p>The lagoon is a place where sea-level rise, urban growth and vegetation change meet. I downloaded Sentinel-2 imagery, built a band set from the 10 m visible and near-infrared bands, clipped the study area and trained a supervised classification in QGIS with the Semi-Automatic Classification Plugin.</p>
+        <p>The first training set did not work well: the spectral signatures of rivers, roads and bare land overlapped. I rebuilt the training polygons, removed roads and beach (10 m pixels could not separate them from bare land) and split water into lagoon sea, canals and lakes.</p>
+        <p>Overall accuracy reached at least <strong>95%</strong>, with 99% for water and 98% for vegetation. Bare land (90%) and buildings (85%) stayed lower, which matches the overlap I saw in the signatures.</p>
+        <div class="tags"><span>Sentinel-2</span><span>QGIS</span><span>SCP</span><span>Supervised classification</span><span>Accuracy assessment</span></div>
+      </div>
+      <figure>
+        <img src="images/venice-classification.jpg" alt="Supervised land cover classification of the Venice Lagoon" loading="lazy">
+        <figcaption>Final supervised classification: lagoon sea, canals, lakes, bare land, land use, buildings, vegetation and sparse vegetation (Sentinel-2, 10 m).</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Carbon -->
+<section id="carbon">
+  <div class="wrap">
+    <p class="kicker">Ecosystem services · MSc team project (2024)</p>
+    <h2>Carbon storage and land-use change on an agroecological farm</h2>
+    <div class="grid2">
+      <figure>
+        <img src="images/terre-del-fiume-carbon.jpg" alt="Carbon storage comparison maps for 2016 and 2023" loading="lazy">
+        <figcaption>Total carbon stored in 2016 and 2023, modelled with InVEST.</figcaption>
+      </figure>
+      <div>
+        <p>Terre del Fiume is a sustainable farm in the south-west of Padova. With Noorullah Muradi I mapped its land use in 2016 and 2023 from georeferenced imagery, assigned carbon pools to each class and modelled carbon storage with InVEST, for the course of Agroecology and Territorial Management.</p>
+        <p>Stored carbon went from about <strong>695 to 728 Mg C</strong>, a gain linked to tree planting, conservation and more diverse crops. Small losses appear where urban fabric expanded.</p>
+        <div class="tags"><span>QGIS 3.34</span><span>InVEST 3.14</span><span>Land use change</span><span>Ecosystem services</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+  <div class="wrap">
+    <p class="kicker">Tools and methods</p>
+    <h2>What I work with</h2>
+    <div class="skills">
+      <div class="skill">
+        <h3>GIS</h3>
+        <p>QGIS (advanced), GRASS GIS, ArcGIS. Raster and vector geoprocessing, zonal statistics, coordinate systems, WMS/WFS, technical and thematic cartography.</p>
+      </div>
+      <div class="skill">
+        <h3>Remote sensing</h3>
+        <p>Google Earth Engine, SNAP. Sentinel-2, Landsat 8/9, PlanetScope, SAR (basic), GRACE. LiDAR DSM/DTM, land surface temperature, supervised classification.</p>
+      </div>
+      <div class="skill">
+        <h3>Programming and data</h3>
+        <p>Python and R for spatial analysis, data cleaning and QA/QC. Visualisation in R (ggplot2). Reproducible workflows with open data.</p>
+      </div>
+      <div class="skill">
+        <h3>Methods</h3>
+        <p>GIS-MCDA and suitability mapping, site selection, vulnerability indices, rooftop PV potential, ecosystem services with InVEST.</p>
+      </div>
+      <div class="skill">
+        <h3>Environment</h3>
+        <p>Environmental impact assessment, permitting support, field surveys and monitoring, technical reports.</p>
+      </div>
+      <div class="skill">
+        <h3>Languages</h3>
+        <p>Dari (native), English (C1), Italian (B2).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Publications -->
+<section id="publications">
+  <div class="wrap">
+    <p class="kicker">Writing</p>
+    <h2>Publications and talks</h2>
+    <ul class="pubs">
+      <li>Ahmadi, A., Codato, D., Peroni, F., &amp; De Marchi, M. (2026). Equity-oriented GIS-MCDA mapping of urban rooftops for green roofs and photovoltaic systems: competition and synergies in Padua, Italy. <em>Urban Climate</em>, 66, 102840. <a href="https://doi.org/10.1016/j.uclim.2026.102840">doi:10.1016/j.uclim.2026.102840</a></li>
+      <li>Codato, D., &amp; Ahmadi, A. (2026). Open-source GIS and remote sensing analysis of rooftop photovoltaic potential in Padova's Industrial Zone. FOSS4G-IT &amp; OSMit 2026, Trento (oral presentation).</li>
+      <li>Ghira, Z., Ahmadi, A., Zanetti, C., &amp; Pappalardo, S. E. (2026, in press). Vulnerability and uneven heat exposure: mapping urban climate justice in Padova, Italy. In <em>Climate Justice in the Earth</em>. CRC Press.</li>
+      <li>Nazari, A., Zaryab, A., &amp; Ahmadi, A. (2023). Estimation of groundwater storage change in the Helmand River Basin (Afghanistan) using GRACE satellite data. <em>Earth Science Informatics</em>, 16, 579–589.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Abdullah Ahmadi · Padova, Italy · <a href="mailto:ahmadi.abdh@gmail.com">ahmadi.abdh@gmail.com</a> · <a href="https://www.linkedin.com/in/abdullahahmadi/">LinkedIn</a><br>
+    Figures from Ahmadi et al. (2026) are published under CC BY 4.0.
+  </div>
+</footer>
+
+</body>
+</html>
